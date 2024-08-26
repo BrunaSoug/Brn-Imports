@@ -19,6 +19,6 @@ A BRN IMPORTS é uma landing page projetada por [BrunaSoug](https://github.com/B
    cd Brn-Imports
 
 3. **Abra a Página em um Navegador**
-      Localize o arquivo index.html no diretório do projeto. 
-      Abra o arquivo index.html em um navegador de sua preferência (como Google Chrome, Mozilla Firefox, etc.) para visualizar a landing page.
+      - Localize o arquivo index.html no diretório do projeto. 
+      - Abra o arquivo index.html em um navegador de sua preferência (como Google Chrome, Mozilla Firefox, etc.) para visualizar a landing page.
 
