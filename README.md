@@ -1,6 +1,6 @@
 # BRN IMPORTS Landing Page
 
-A BRN IMPORTS é uma landing page projetada por [BrunaSoug](https://github.com/BrunaSoug) para promover e vender produtos. Este projeto oferece uma interface atraente e funcional para apresentar produtos e facilitar a conversão de visitantes em clientes.
+A BRN IMPORTS é uma landing page projetada por mim, [BrunaSoug](https://github.com/BrunaSoug), para promover e vender produtos. Este projeto oferece uma interface atraente e funcional para apresentar produtos e facilitar a conversão de visitantes em clientes.
 
 ## Tecnologias Utilizadas
 
