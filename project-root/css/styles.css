@@ -1,0 +1,187 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff; /* Fundo branco para a página */
+    color: #000; /* Texto preto para contraste */
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #000; /* Fundo preto para cabeçalho */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header .logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: center; /* Centraliza o menu de navegação */
+    margin-top: 20px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu li {
+    margin: 0;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #ccc;
+}
+
+/* Estilo do conteúdo do cabeçalho */
+.header-content {
+    padding: 20px;
+}
+
+.header-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.header-content p {
+    font-size: 1.2em;
+}
+
+/* Estilo da seção de vitrine */
+#vitrine {
+    padding: 40px 20px;
+    background-color: #fff; /* Fundo branco para a seção de vitrine */
+}
+
+#vitrine h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.vitrine-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.vitrine-item {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    overflow: hidden;
+    border: 1px solid #333;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.vitrine-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.vitrine-item h3 {
+    font-size: 1.2em;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.vitrine-item p {
+    text-align: center;
+}
+
+/* Efeito de rotação na vitrine */
+.vitrine-item:hover {
+    transform: rotateY(10deg);
+    z-index: 10;
+}
+
+.vitrine-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Estilo da seção de contato */
+#contact {
+    padding: 40px 20px;
+    background-color: #fff; /* Fundo branco para a seção de contato */
+    color: #000;
+    text-align: center;
+}
+
+#contact .btn {
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#contact .btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: #000; /* Fundo preto para o rodapé */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-logo {
+    max-width: 100px;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Container comum */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Estilos para o ícone flutuante do WhatsApp */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px; /* Distância do fundo da página */
+    right: 20px;  /* Distância da borda direita da página */
+    z-index: 1000; /* Garante que o ícone esteja sobre outros elementos */
+}
+
+.whatsapp-icon img {
+    width: 60px; /* Largura do ícone */
+    height: auto; /* Altura proporcional */
+    border-radius: 50%; /* Torna o ícone circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra para destaque */
+    transition: transform 0.3s; /* Adiciona uma animação suave ao passar o mouse */
+}
+
+.whatsapp-icon img:hover {
+    transform: scale(1.1); /* Aumenta o ícone quando o mouse passa sobre ele */
+}
+
