@@ -1,187 +1,471 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilo do corpo */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #fff; /* Fundo branco para a página */
-    color: #000; /* Texto preto para contraste */
-}
-
-/* Estilo do cabeçalho */
-header {
-    background-color: #000; /* Fundo preto para cabeçalho */
+    font-family: 'Arial', sans-serif;
+    background-color: #0e0e0e;
     color: #fff;
-    padding: 20px;
-    text-align: center;
 }
 
-header .logo img {
-    max-width: 150px;
-    height: auto;
-}
-
-nav {
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
-    justify-content: center; /* Centraliza o menu de navegação */
-    margin-top: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px;
+    background: black;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+header.hidden {
+    transform: translateY(-100%);
+}
+
+.logo img {
+    width: 300px;
 }
 
 .nav-menu {
     list-style: none;
     display: flex;
-    gap: 20px;
+    align-items: center;
 }
-
 .nav-menu li {
-    margin: 0;
+    margin-left: 20px;
 }
-
 .nav-menu a {
     color: #fff;
     text-decoration: none;
+    font-size: 16px;
+}
+
+.btn-geral {
+    background-color: #a915fe;
+    padding: 10px 20px;
+    border-radius: 30px;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: 0.3s;
 }
-
-.nav-menu a:hover {
-    color: #ccc;
+.btn-geral:hover {
+    background-color: #6e0bb6;
 }
-
-/* Estilo do conteúdo do cabeçalho */
-.header-content {
+/* Menu lateral móvel */
+.nav-menu-mobile {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #333;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease;
     padding: 20px;
+    z-index: 999;
 }
 
-.header-content h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+.nav-menu-mobile ul {
+    list-style: none;
+    padding: 0;
 }
 
-.header-content p {
-    font-size: 1.2em;
+.nav-menu-mobile li {
+    margin: 15px 0;
 }
 
-/* Estilo da seção de vitrine */
-#vitrine {
-    padding: 40px 20px;
-    background-color: #fff; /* Fundo branco para a seção de vitrine */
+.nav-menu-mobile a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
 }
 
-#vitrine h2 {
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 998;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-icon {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #fff;
+    margin: 5px 0;
+}
+/* Conteúdo do cabeçalho */
+.header-content {
     text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6));
+    background-size: cover;
+}
+.header-content h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+.header-content p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+/* Seção Sobre */
+.sobre-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: calc(200px + 80px) 0 calc(100px + 50px);
+    background: linear-gradient(135deg, #1f1f1f, #3a3a3a);
+    color: #fff;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sobre-content {
+    max-width: 600px;
+}
+.sobre-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.sobre-content p {
+    font-size: 18px;
+    line-height: 1.6;
     margin-bottom: 20px;
 }
 
-.vitrine-grid {
+/* Seção Vitrine */
+.vitrine-section {
+    padding: calc(200px + 80px) 0 calc(100px + 50px);
+    background-color: #f4f4f4;
+}
+.vitrine-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+.vitrine-cards {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
     justify-content: center;
-}
-
-.vitrine-item {
+    align-items: center;
     position: relative;
-    width: 250px;
-    height: 300px;
-    overflow: hidden;
-    border: 1px solid #333;
-    border-radius: 10px;
-    transition: transform 0.5s ease;
-}
-
-.vitrine-item img {
     width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.5s ease;
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 400px;
+    overflow: hidden;
 }
-
-.vitrine-item h3 {
-    font-size: 1.2em;
-    margin-top: 10px;
-    text-align: center;
+.card {
+    width: 300px;
+    height: 100%;
+    perspective: 1000px;
+    cursor: pointer;
+    position: absolute;
 }
-
-.vitrine-item p {
-    text-align: center;
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
 }
-
-/* Efeito de rotação na vitrine */
-.vitrine-item:hover {
-    transform: rotateY(10deg);
-    z-index: 10;
+.card:hover .card-inner {
+    transform: rotateY(180deg); 
 }
-
-.vitrine-item:hover img {
-    transform: scale(1.1);
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
 }
-
-/* Estilo da seção de contato */
-#contact {
-    padding: 40px 20px;
-    background-color: #fff; /* Fundo branco para a seção de contato */
-    color: #000;
-    text-align: center;
-}
-
-#contact .btn {
-    display: inline-block;
-    background-color: #000;
+.card-front {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 1;
 }
-
-#contact .btn:hover {
-    background-color: #333;
-    color: #fff;
-}
-
-/* Estilo do rodapé */
-footer {
-    background-color: #000; /* Fundo preto para o rodapé */
-    color: #fff;
+.card-back {
+    background-color: #000000;
+    border-radius: 10px;
+    color: #ffffff;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+.center {
+    transform: translateX(0) scale(1.2);
+    z-index: 2;
+}
+.left, .right {
+    transform: scale(1);
+    z-index: 1;
+}
+.left {
+    transform: translateX(-110%) scale(0.9);
+}
+.right {
+    transform: translateX(110%) scale(0.9);
+}
+
+
+/* Seção de Contato */
+.contato-section {
+    padding: calc(200px + 80px) 0 calc(100px + 50px);
+    background: linear-gradient(135deg, rgba(31, 31, 31, 0.8), rgba(58, 58, 58, 0.8));
+    color: #fff;
     text-align: center;
 }
-
-.footer-logo {
-    max-width: 100px;
-    height: auto;
-    margin-top: 10px;
-}
-
-/* Container comum */
-.container {
-    width: 80%;
+.contato-content {
+    max-width: 600px;
     margin: 0 auto;
 }
+.contato-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.contato-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+.whatsapp-btn {
+    background-color: #25D366;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+.whatsapp-btn i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+.whatsapp-btn:hover {
+    background-color: #1EBE56;
+}
 
-/* Estilos para o ícone flutuante do WhatsApp */
+/* Ícone flutuante do WhatsApp */
 .whatsapp-icon {
     position: fixed;
-    bottom: 20px; /* Distância do fundo da página */
-    right: 20px;  /* Distância da borda direita da página */
-    z-index: 1000; /* Garante que o ícone esteja sobre outros elementos */
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
 }
-
 .whatsapp-icon img {
-    width: 60px; /* Largura do ícone */
-    height: auto; /* Altura proporcional */
-    border-radius: 50%; /* Torna o ícone circular */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra para destaque */
-    transition: transform 0.3s; /* Adiciona uma animação suave ao passar o mouse */
+    width: 90px;
+    height: 90px;
 }
 
-.whatsapp-icon img:hover {
-    transform: scale(1.1); /* Aumenta o ícone quando o mouse passa sobre ele */
+/* Rodapé */
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer p {
+    margin: 5px 0;
+}
+.social-icons a {
+    margin: 0 10px;
+    color: #000;
+    font-size: 50px;
+    text-decoration: none;
+}
+.social-icons a:hover {
+    color: #fff;
 }
 
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    /* Header */
+    header {
+        padding: 10px;
+    }
+    .logo img {
+        width: 200px;
+    }
+    .nav-menu {
+        flex-direction: column;
+        display: none;
+    }
+    .nav-menu.active {
+        display: flex; 
+    }
+    .nav-menu li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    
+    /* Conteúdo do Cabeçalho */
+    .header-content {
+        padding: 80px 20px;
+    }
+    .header-content h1 {
+        font-size: 36px;
+    }
+    .header-content p {
+        font-size: 18px;
+    }
+    
+    /* Seção Sobre */
+    .sobre-section {
+        flex-direction: column;
+        padding: 100px 20px;
+    }
+    .sobre-content {
+        max-width: 100%;
+    }
+    
+    /* Seção Vitrine */
+    .vitrine-section {
+        padding: 100px 20px;
+    }
+    .vitrine-title {
+        font-size: 2rem;
+    }
+    .vitrine-cards {
+        flex-direction: column;
+        height: auto;
+    }
+    .card {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .card-inner {
+        height: 300px;
+    }
+    
+    /* Seção de Contato */
+    .contato-content h2 {
+        font-size: 2rem;
+    }
+    .contato-content p {
+        font-size: 1rem;
+    }
+    .whatsapp-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+    
+    /* Ícone flutuante do WhatsApp */
+    .whatsapp-icon {
+        bottom: 15px;
+        right: 15px;
+        width: 60px;
+        height: 60px;
+    }
+}
+/* Estilos para telas pequenas */
+@media (max-width: 768px) {
+    .nav-menu-desktop {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu-mobile.open {
+        left: 0;
+    }
+
+    .overlay.active {
+        display: block; 
+    }
+}
+
+@media (min-width: 769px) {
+    /* Estilos para dispositivos maiores */
+    .nav-menu-mobile {
+        display: none; 
+    }
+
+    .menu-toggle {
+        display: none; 
+    }
+}
+/* Responsividade para telas pequenas */
+@media (max-width: 480px) {
+    /* Header */
+    .logo img {
+        width: 150px;
+    }
+    .nav-menu li {
+        font-size: 14px;
+    }
+    
+    /* Conteúdo do Cabeçalho */
+    .header-content h1 {
+        font-size: 28px;
+    }
+    .header-content p {
+        font-size: 16px;
+    }
+    
+    /* Seção Sobre */
+    .sobre-content h2 {
+        font-size: 28px;
+    }
+    .sobre-content p {
+        font-size: 16px;
+    }
+    
+    /* Seção Vitrine */
+    .card-inner {
+        height: 250px;
+    }
+    
+    /* Seção de Contato */
+    .contato-content h2 {
+        font-size: 1.5rem;
+    }
+    .contato-content p {
+        font-size: 0.9rem;
+    }
+    .whatsapp-btn {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+    
+    /* Ícone flutuante do WhatsApp */
+    .whatsapp-icon {
+        width: 50px;
+        height: 50px;
+    }
+}

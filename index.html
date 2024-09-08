@@ -4,76 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="project-root/assets/icons/favicon.ico" type="image/x-icon">
-    <title>BRN Imports</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>BRN IMPORTS</title>
     <link rel="stylesheet" href="project-root/css/styles.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="project-root/assets/images/logo.png" alt="Logo BRN Imports">
+            <img src="project-root/assets/images/logo.png" alt="Logo TrackMate">
         </div>
-        <nav>
+        <nav class="nav-menu-desktop">
             <ul class="nav-menu">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="#Sobre" class="btn-geral">Sobre</a></li>
+                <li><a href="#Contato" class="btn-geral">Contato</a></li>
+                <li><a href="#Vitrine" class="btn-geral">Vitrine</a></li>
             </ul>
         </nav>
-        <div class="header-content">
-            <h1>Bem-vindo à BRN Imports!</h1>
-            <p>Descubra os melhores produtos importados com qualidade garantida.</p>
-        </div>
+        <button class="menu-toggle" aria-label="Menu">
+            <span class="menu-icon"></span>
+            <span class="menu-icon"></span>
+            <span class="menu-icon"></span>
+        </button>
+        <nav class="nav-menu-mobile">
+            <ul>
+                <li><a href="#Sobre">Sobre</a></li>
+                <li><a href="#Contato">Contato</a></li>
+                <li><a href="#Vitrine">Vitrine</a></li>
+            </ul>
+        </nav>
+        <div class="overlay"></div>
     </header>
-
-    <!-- Seção de Vitrine -->
-    <section id="vitrine">
+    <section id="Sobre" class="sobre-section">
         <div class="container">
-            <h2>Vitrine</h2>
-            <div class="vitrine-grid">
-                <div class="vitrine-item">
-                    <img src="assets/images/vitrine1.jpg" alt="Vitrine 1">
-                    <h3>Produto em Destaque 1</h3>
-                    <p>Descrição breve do produto ou categoria.</p>
-                </div>
-                <div class="vitrine-item">
-                    <img src="assets/images/vitrine2.jpg" alt="Vitrine 2">
-                    <h3>Produto em Destaque 2</h3>
-                    <p>Descrição breve do produto ou categoria.</p>
-                </div>
-                <div class="vitrine-item">
-                    <img src="assets/images/vitrine3.jpg" alt="Vitrine 3">
-                    <h3>Produto em Destaque 3</h3>
-                    <p>Descrição breve do produto ou categoria.</p>
-                </div>
-                <div class="vitrine-item">
-                    <img src="assets/images/vitrine4.jpg" alt="Vitrine 4">
-                    <h3>Produto em Destaque 4</h3>
-                    <p>Descrição breve do produto ou categoria.</p>
-                </div>
-                <!-- Adicione mais itens da vitrine conforme necessário -->
+            <div class="sobre-content">
+                <h2>BRN Imports</h2>
+                <p>teste teste teste teste.</p>
+                <p>Desenvolvido para quem busca tecnologia de ponta e desempenho único.</p>
             </div>
         </div>
     </section>
-
-    <!-- Seção de Contato -->
-    <section id="contact">
+    <section id="Vitrine" class="vitrine-section">
         <div class="container">
-            <h2>Entre em Contato</h2>
-            <p>Tem alguma dúvida? Entre em contato conosco pelo WhatsApp e responderemos o mais rápido possível.</p>
-            <a href="https://wa.me/55000000000" class="btn" target="_blank">Fale Conosco pelo WhatsApp</a>
+            <h2 class="vitrine-title">Nossos Produtos</h2>
+            <div class="vitrine-cards">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="imagem1.jpg" alt="Produto 1">
+                            <h3>Produto 1</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Descrição breve do Produto 1. Tecnologia avançada e design inovador.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="imagem2.jpg" alt="Produto 2">
+                            <h3>Produto 2</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Descrição breve do Produto 2. Funcionalidade e estilo combinados.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="imagem3.jpg" alt="Produto 3">
+                            <h3>Produto 3</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Descrição breve do Produto 3. Ideal para o dia a dia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-
-    <!-- Rodapé -->
+    <section id="Contato" class="contato-section">
+        <div class="container">
+            <div class="contato-content">
+                <h2>Entre em Contato</h2>
+                <p>Quer saber mais sobre nossos produtos ou fazer uma encomenda? Estamos à disposição para atender suas dúvidas e solicitações. Fale conosco através do WhatsApp!</p>
+                <a href="https://wa.me/5511999999999" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Fale Conosco no WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
     <footer>
         <div class="container">
             <p>&copy; 2024 BRN Imports. Todos os direitos reservados.</p>
-            <p>Desenvolvido por BSoug.</p>
-            <img src="project-root/assets/images/logo.png" alt="Logo BRN Imports" class="footer-logo">
+            <p>Desenvolvido por BS.</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/seu_perfil" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/seu_perfil" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </div>
         </div>
     </footer>
-
-    <script src="js/main.js"></script>
 </body>
 <!-- Ícone Flutuante do WhatsApp -->
 <div class="whatsapp-icon">
@@ -81,4 +115,5 @@
         <img src="project-root/assets/images/whatsapp-icone.png" alt="WhatsApp">
     </a>
 </div>
+<script src="/project-root/js/main.js"></script>
 </html>
